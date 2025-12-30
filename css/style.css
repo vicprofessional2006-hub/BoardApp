@@ -1,0 +1,18 @@
+/* Simple styles */
+:root{--bg:#071427;--panel:#0b1220;--muted:#94a3b8;--accent:#7c3aed;--note-bg:#fff7db}
+*{box-sizing:border-box}html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:#e6eef8;background:linear-gradient(180deg,#031025,#071427)}
+.app{display:flex;height:100vh}
+.sidebar{width:300px;padding:12px;background:rgba(7,18,40,0.9);display:flex;flex-direction:column}
+.board-list{list-style:none;padding:8px;margin:8px 0;flex:1;overflow:auto}
+.board-list li{padding:8px;border-radius:6px;margin:6px 0;background:transparent;cursor:pointer}
+.board-list li.active{background:rgba(124,58,237,0.12);color:var(--accent)}
+footer input{width:100%;padding:8px;margin-top:6px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.03)}
+.world{position:relative;left:0;top:0;transform-origin:0 0;width:2500px;height:1500px;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:40px 40px,40px 40px}
+.note{position:absolute;width:220px;min-height:80px;background:var(--note-bg);color:#111827;border-radius:8px;padding:8px;box-shadow:0 8px 26px rgba(2,6,23,0.5);display:flex;flex-direction:column;gap:6px}
+.note-header{display:flex;justify-content:space-between;align-items:center}
+.muted{color:var(--muted);font-size:12px}
+button{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.03);color:inherit;padding:6px 8px;border-radius:6px;cursor:pointer}
+.overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.8))}
+.login-card{background:#071427;padding:18px;border-radius:10px;width:360px;box-shadow:0 8px 40px rgba(2,6,23,0.6)}
+.row{display:flex;gap:8px;margin-top:8px}

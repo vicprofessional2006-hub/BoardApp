@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Quadros & Notas — GitSync</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<!-- Login removido: acesso direto -->
+
+  <div id="login" class="overlay">
+    <div class="login-card">
+      <h2>Entrar — Quadros & Notas</h2>
+      <input id="pwd" type="password" placeholder="Senha" />
+      <div class="row">
+        <button id="btnLogin">Entrar</button>
+        <button id="btnClear">Limpar dados</button>
+      </div>
+      <small class="muted">Senha pessoal (não segura): lovevenusforever</small>
+      <div id="loginMsg" class="muted"></div>
+    </div>
+  </div>
+
+  <div id="appRoot" class="app hidden">
+    <aside class="sidebar">
+      <header>
+        <h1>Quadros</h1>
+        <div class="actions">
+          <button id="btnNew">Novo</button>
+          <button id="btnPull">Pull (GitHub)</button>
+          <button id="btnPush">Push (GitHub)</button>
+        </div>
+      </header>
+      <ul id="boardList" class="board-list"></ul>
+
+      <footer>
+        <input id="githubRepo" placeholder="owner/repo (ex: victoria/quadros-notas)" />
+        <input id="githubToken" placeholder="Token (PASTE; stored in session only)" />
+        <small class="muted">Token needs repo:contents scope for private repos, or public repo write for public.</small>
+      </footer>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="left">
+          <button id="btnUndo">↶</button>
+          <button id="btnRedo">↷</button>
+        </div>
+        <div class="center">
+          <h2 id="boardTitle" contenteditable="true">—</h2>
+          <div id="autosave" class="muted">—</div>
+        </div>
+        <div class="right">
+          <button id="btnAddNote">+ Nota</button>
+          <button id="btnDeleteBoard">Excluir quadro</button>
+        </div>
+      </header>
+
+      <section id="canvasWrap" class="canvas-wrap">
+        <div id="world" class="world"></div>
+      </section>
+    </main>
+  </div>
+
+  <template id="noteTemplate">
+    <div class="note">
+      <div class="note-header">
+        <span class="note-title" contenteditable="true"></span>
+        <div class="note-controls">
+          <button class="btn-dup">⎘</button>
+          <button class="btn-del">✕</button>
+        </div>
+      </div>
+      <div class="note-body" contenteditable="true"></div>
+    </div>
+  </template>
+
+  <script src="js/history.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/github-sync.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
